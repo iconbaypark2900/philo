@@ -16,14 +16,14 @@ interface SuggestedActionsProps {
 function PureSuggestedActions({ chatId, append }: SuggestedActionsProps) {
   const suggestedActions = [
     {
-      title: 'What is the weather',
-      label: 'in San Francisco?',
-      action: 'What is the weather in San Francisco?',
+      title: 'Explain the concept',
+      label: 'of moral relativism',
+      action: 'Can you explain the philosophical concept of moral relativism?',
     },
     {
-      title: 'Help me draft an essay',
-      label: 'about Silicon Valley',
-      action: 'Help me draft a short essay about Silicon Valley',
+      title: 'Compare philosophers',
+      label: 'Plato vs Aristotle',
+      action: 'What are the key differences between Plato and Aristotle\'s philosophical views?',
     },
   ];
 
