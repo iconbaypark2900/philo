@@ -16,6 +16,11 @@ export const authConfig = {
       const isOnRegister = nextUrl.pathname.startsWith('/register');
       const isOnLogin = nextUrl.pathname.startsWith('/login');
 
+      // Get the base URL considering Codespaces
+      const baseUrl = process.env.CODESPACE_NAME
+        ? `https://${process.env.CODESPACE_NAME}-3000.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`
+        : new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000');
+
       if (isLoggedIn && (isOnLogin || isOnRegister)) {
         return Response.redirect(new URL('/', nextUrl as unknown as URL));
       }
@@ -36,4 +41,5 @@ export const authConfig = {
       return true;
     },
   },
+  trustHost: true,
 } satisfies NextAuthConfig;

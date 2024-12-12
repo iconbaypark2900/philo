@@ -51,5 +51,12 @@ export const {
 
       return session;
     },
+    async redirect({ url, baseUrl }) {
+      if (process.env.CODESPACE_NAME) {
+        const codespaceUrl = `https://${process.env.CODESPACE_NAME}-3000.${process.env.GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}`;
+        return url.startsWith(codespaceUrl) ? url : codespaceUrl;
+      }
+      return url.startsWith(baseUrl) ? url : baseUrl;
+    },
   },
 });

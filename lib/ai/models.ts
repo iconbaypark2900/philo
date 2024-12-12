@@ -10,15 +10,15 @@ export interface Model {
 export const models: Array<Model> = [
   {
     id: 'gpt-4o-mini',
-    label: 'GPT 4o mini',
+    label: 'Philo Basic',
     apiIdentifier: 'gpt-4o-mini',
-    description: 'Small model for fast, lightweight tasks',
+    description: 'For introductory philosophical discussions',
   },
   {
     id: 'gpt-4o',
-    label: 'GPT 4o',
+    label: 'Philo Advanced',
     apiIdentifier: 'gpt-4o',
-    description: 'For complex, multi-step tasks',
+    description: 'For deep philosophical analysis and complex topics',
   },
 ] as const;
 
